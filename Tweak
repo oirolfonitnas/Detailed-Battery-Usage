@@ -1,0 +1,1643 @@
+@@ -11,6 +11,8 @@
+ 	<key>CFBundleDocumentTypes</key>
+ 	<array>
+ 		<dict>
++			<key>CFBundleTypeIconFiles</key>
++			<array/>
+ 			<key>CFBundleTypeName</key>
+ 			<string>MKDirectionsRequest</string>
+ 			<key>LSItemContentTypes</key>
+ @@ -45,19 +47,17 @@
+ 	<key>CFBundlePackageType</key>
+ 	<string>APPL</string>
+ 	<key>CFBundleShortVersionString</key>
+-	<string>2.1</string>
++	<string>2.1.1</string>
+ 	<key>CFBundleSignature</key>
+ 	<string>????</string>
+ 	<key>CFBundleVersion</key>
+-	<string>208</string>
++	<string>211</string>
+ 	<key>LSRequiresIPhoneOS</key>
+ 	<true/>
+ 	<key>MKDirectionsApplicationSupportedModes</key>
+ 	<array>
+ 		<string>MKDirectionsModeBike</string>
+ 	</array>
+-	<key>MKDirectionsRequest</key>
+-	<string>com.apple.maps.directionsrequest</string>
+ 	<key>NSMainNibFile</key>
+ 	<string>CycleStreetsWindow</string>
+ 	<key>SERVERDOMAIN_ID</key>
+View 56  CycleStreets.xcodeproj/project.pbxproj
+ @@ -230,7 +230,6 @@
+ 		2834365D15DD5DC300B00FD5 /* POICatLocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281E09051451C6D20034CC63 /* POICatLocationCell.xib */; };
+ 		2834365E15DD5DC300B00FD5 /* POICategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281E09071451CA210034CC63 /* POICategoryView.xib */; };
+ 		2834365F15DD5DC300B00FD5 /* RouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2818C79F1458069D0077F529 /* RouteCell.xib */; };
+-		2834366015DD5DC300B00FD5 /* RouteToolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288F6B9C14FBF85900B64602 /* RouteToolCell.xib */; };
+ 		2834366115DD5DC300B00FD5 /* Alert200x200.png in Resources */ = {isa = PBXBuildFile; fileRef = 28187A5714FCFF4C00A38A17 /* Alert200x200.png */; };
+ 		2834366215DD5DC300B00FD5 /* CSIcon_MapArrow_end.png in Resources */ = {isa = PBXBuildFile; fileRef = 28187A5914FCFF4C00A38A17 /* CSIcon_MapArrow_end.png */; };
+ 		2834366315DD5DC300B00FD5 /* CSIcon_MapArrow_start.png in Resources */ = {isa = PBXBuildFile; fileRef = 28187A5A14FCFF4C00A38A17 /* CSIcon_MapArrow_start.png */; };
+ @@ -447,7 +446,6 @@
+ 		2834374A15DD5DC300B00FD5 /* SegmentVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E8A3CB1455638D0063AA96 /* SegmentVO.m */; };
+ 		2834374B15DD5DC300B00FD5 /* SavedRoutesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E8A3E51455B6D00063AA96 /* SavedRoutesManager.m */; };
+ 		2834374C15DD5DC300B00FD5 /* RoutesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 288B10271457492500E2A96F /* RoutesViewController.m */; };
+-		2834374D15DD5DC300B00FD5 /* RouteToolCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 288F6B9F14FBF91700B64602 /* RouteToolCellView.m */; };
+ 		2834374E15DD5DC300B00FD5 /* UserLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28187A3214FCC7EF00A38A17 /* UserLocationManager.m */; };
+ 		2834374F15DD5DC300B00FD5 /* PhotoWizardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A89CCB14FD4A610001BABA /* PhotoWizardViewController.m */; };
+ 		2834375015DD5DC300B00FD5 /* UploadPhotoVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A89CD414FD52230001BABA /* UploadPhotoVO.m */; };
+ @@ -468,9 +466,6 @@
+ 		2834375F15DD5DC300B00FD5 /* NSString-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B4855D15262D6000E406E1 /* NSString-Utilities.m */; };
+ 		2834376015DD5DC300B00FD5 /* PhotoCategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C0185A153D74C500023FAF /* PhotoCategoryManager.m */; };
+ 		2834376115DD5DC300B00FD5 /* PhotoCategoryVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C0185D153D7BF100023FAF /* PhotoCategoryVO.m */; };
+-		2834376215DD5DC300B00FD5 /* NSNotificationCenter+SFObservers.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C3CF5D15775A7800A49D5C /* NSNotificationCenter+SFObservers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+-		2834376315DD5DC300B00FD5 /* NSObject+SFObservers.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C3CF5F15775A7800A49D5C /* NSObject+SFObservers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+-		2834376415DD5DC300B00FD5 /* NSObject+SFExecuteOnDealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C3CF6215775A7800A49D5C /* NSObject+SFExecuteOnDealloc.m */; };
+ 		2834376515DD5DC300B00FD5 /* MapLocationSearchCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2858F2B3158617290047283D /* MapLocationSearchCellView.m */; };
+ 		2834376615DD5DC300B00FD5 /* PhotoWizardCategoryMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C8342215A3604D00EE58B5 /* PhotoWizardCategoryMenuViewController.m */; };
+ 		2834376715DD5DC300B00FD5 /* PhotoWizardCategoryCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DFE8D715A428DD005FDCA0 /* PhotoWizardCategoryCellView.m */; };
+ @@ -544,8 +539,6 @@
+ 		288663941521F7C60076BE5C /* RoutePlanMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288663931521F7C60076BE5C /* RoutePlanMenuView.xib */; };
+ 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+ 		288B10281457492500E2A96F /* RoutesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 288B10271457492500E2A96F /* RoutesViewController.m */; };
+-		288F6B9D14FBF85900B64602 /* RouteToolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288F6B9C14FBF85900B64602 /* RouteToolCell.xib */; };
+-		288F6BA014FBF91700B64602 /* RouteToolCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 288F6B9F14FBF91700B64602 /* RouteToolCellView.m */; };
+ 		288FA2C3150BF9500068F0C1 /* PhotoWizardLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 288FA2C2150BF9500068F0C1 /* PhotoWizardLocationViewController.m */; };
+ 		288FA2CC150C06F00068F0C1 /* PhotoWizardLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288FA2CB150C06F00068F0C1 /* PhotoWizardLocationView.xib */; };
+ 		2890F16014FEC30500FF8901 /* PhotoWizardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2890F15F14FEC30500FF8901 /* PhotoWizardView.xib */; };
+ @@ -696,9 +689,6 @@
+ 		28B78DA21507884C00949870 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B78DA11507884C00949870 /* MapKit.framework */; };
+ 		28C0185B153D74C500023FAF /* PhotoCategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C0185A153D74C500023FAF /* PhotoCategoryManager.m */; };
+ 		28C0185E153D7BF100023FAF /* PhotoCategoryVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C0185D153D7BF100023FAF /* PhotoCategoryVO.m */; };
+-		28C3CF6415775A7800A49D5C /* NSNotificationCenter+SFObservers.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C3CF5D15775A7800A49D5C /* NSNotificationCenter+SFObservers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+-		28C3CF6515775A7800A49D5C /* NSObject+SFObservers.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C3CF5F15775A7800A49D5C /* NSObject+SFObservers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+-		28C3CF6615775A7800A49D5C /* NSObject+SFExecuteOnDealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C3CF6215775A7800A49D5C /* NSObject+SFExecuteOnDealloc.m */; };
+ 		28C4ABE81450708900A0ECD3 /* btn_slider_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 28C4ABDC1450708900A0ECD3 /* btn_slider_off.png */; };
+ 		28C4ABE91450708900A0ECD3 /* btn_slider_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28C4ABDD1450708900A0ECD3 /* btn_slider_off@2x.png */; };
+ 		28C4ABEA1450708900A0ECD3 /* btn_slider_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 28C4ABDE1450708900A0ECD3 /* btn_slider_on.png */; };
+ @@ -1058,9 +1048,6 @@
+ 		288663931521F7C60076BE5C /* RoutePlanMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoutePlanMenuView.xib; sourceTree = "<group>"; };
+ 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+ 		288B10271457492500E2A96F /* RoutesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutesViewController.m; sourceTree = "<group>"; };
+-		288F6B9C14FBF85900B64602 /* RouteToolCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteToolCell.xib; sourceTree = "<group>"; };
+-		288F6B9E14FBF91700B64602 /* RouteToolCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteToolCellView.h; sourceTree = "<group>"; };
+-		288F6B9F14FBF91700B64602 /* RouteToolCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteToolCellView.m; sourceTree = "<group>"; };
+ 		288FA2C1150BF9500068F0C1 /* PhotoWizardLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoWizardLocationViewController.h; path = PhotoWizard/PhotoWizardLocationViewController.h; sourceTree = "<group>"; };
+ 		288FA2C2150BF9500068F0C1 /* PhotoWizardLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoWizardLocationViewController.m; path = PhotoWizard/PhotoWizardLocationViewController.m; sourceTree = "<group>"; };
+ 		288FA2CB150C06F00068F0C1 /* PhotoWizardLocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PhotoWizardLocationView.xib; path = photowizard/PhotoWizardLocationView.xib; sourceTree = "<group>"; };
+ @@ -1286,13 +1273,6 @@
+ 		28C0185A153D74C500023FAF /* PhotoCategoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCategoryManager.m; sourceTree = "<group>"; };
+ 		28C0185C153D7BF100023FAF /* PhotoCategoryVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCategoryVO.h; sourceTree = "<group>"; };
+ 		28C0185D153D7BF100023FAF /* PhotoCategoryVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCategoryVO.m; sourceTree = "<group>"; };
+-		28C3CF5C15775A7800A49D5C /* NSNotificationCenter+SFObservers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+SFObservers.h"; sourceTree = "<group>"; };
+-		28C3CF5D15775A7800A49D5C /* NSNotificationCenter+SFObservers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+SFObservers.m"; sourceTree = "<group>"; };
+-		28C3CF5E15775A7800A49D5C /* NSObject+SFObservers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SFObservers.h"; sourceTree = "<group>"; };
+-		28C3CF5F15775A7800A49D5C /* NSObject+SFObservers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SFObservers.m"; sourceTree = "<group>"; };
+-		28C3CF6115775A7800A49D5C /* NSObject+SFExecuteOnDealloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SFExecuteOnDealloc.h"; sourceTree = "<group>"; };
+-		28C3CF6215775A7800A49D5C /* NSObject+SFExecuteOnDealloc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SFExecuteOnDealloc.m"; sourceTree = "<group>"; };
+-		28C3CF6315775A7800A49D5C /* SFObservers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFObservers.h; sourceTree = "<group>"; };
+ 		28C4ABDC1450708900A0ECD3 /* btn_slider_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_slider_off.png; sourceTree = "<group>"; };
+ 		28C4ABDD1450708900A0ECD3 /* btn_slider_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_slider_off@2x.png"; sourceTree = "<group>"; };
+ 		28C4ABDE1450708900A0ECD3 /* btn_slider_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_slider_on.png; sourceTree = "<group>"; };
+ @@ -1440,7 +1420,6 @@
+ 			isa = PBXGroup;
+ 			children = (
+ 				289CAF8615F89A460036DE98 /* TestFlight */,
+-				28C3CF5B15775A7800A49D5C /* SFObservers */,
+ 				28B484DE15261FAC00E406E1 /* WEPopover */,
+ 				280E2417144D82850021CDFA /* JSONKit */,
+ 				280E241F144D82850021CDFA /* MBProgressHUD */,
+ @@ -1624,7 +1603,6 @@
+ 				280E931C140984F300C7AC75 /* RouteTableCell.xib */,
+ 				281E08C3145179AC0034CC63 /* POITypeCell.xib */,
+ 				281E09051451C6D20034CC63 /* POICatLocationCell.xib */,
+-				288F6B9C14FBF85900B64602 /* RouteToolCell.xib */,
+ 				2858F2B01586161B0047283D /* MapLocationSearchCell.xib */,
+ 				28DFE8D415A42881005FDCA0 /* PhotoWizardCategoryCell.xib */,
+ 			);
+ @@ -1917,8 +1895,6 @@
+ 				28A8B6311450B1DC009C5647 /* POITypeCellView.m */,
+ 				281E08BA14516A4F0034CC63 /* POICatLocationCellView.h */,
+ 				281E08BB14516A4F0034CC63 /* POICatLocationCellView.m */,
+-				288F6B9E14FBF91700B64602 /* RouteToolCellView.h */,
+-				288F6B9F14FBF91700B64602 /* RouteToolCellView.m */,
+ 				2858F2B2158617290047283D /* MapLocationSearchCellView.h */,
+ 				2858F2B3158617290047283D /* MapLocationSearchCellView.m */,
+ 				28DFE8D615A428DD005FDCA0 /* PhotoWizardCategoryCellView.h */,
+ @@ -2526,28 +2502,6 @@
+ 			path = constants;
+ 			sourceTree = "<group>";
+ 		};
+-		28C3CF5B15775A7800A49D5C /* SFObservers */ = {
+-			isa = PBXGroup;
+-			children = (
+-				28C3CF5C15775A7800A49D5C /* NSNotificationCenter+SFObservers.h */,
+-				28C3CF5D15775A7800A49D5C /* NSNotificationCenter+SFObservers.m */,
+-				28C3CF5E15775A7800A49D5C /* NSObject+SFObservers.h */,
+-				28C3CF5F15775A7800A49D5C /* NSObject+SFObservers.m */,
+-				28C3CF6015775A7800A49D5C /* SFExecuteOnDealloc */,
+-				28C3CF6315775A7800A49D5C /* SFObservers.h */,
+-			);
+-			path = SFObservers;
+-			sourceTree = "<group>";
+-		};
+-		28C3CF6015775A7800A49D5C /* SFExecuteOnDealloc */ = {
+-			isa = PBXGroup;
+-			children = (
+-				28C3CF6115775A7800A49D5C /* NSObject+SFExecuteOnDealloc.h */,
+-				28C3CF6215775A7800A49D5C /* NSObject+SFExecuteOnDealloc.m */,
+-			);
+-			path = SFExecuteOnDealloc;
+-			sourceTree = "<group>";
+-		};
+ 		28C4ABDB1450708900A0ECD3 /* defaultimages */ = {
+ 			isa = PBXGroup;
+ 			children = (
+ @@ -2869,7 +2823,6 @@
+ 				281E09061451C6D20034CC63 /* POICatLocationCell.xib in Resources */,
+ 				281E09081451CA210034CC63 /* POICategoryView.xib in Resources */,
+ 				2818C7A01458069E0077F529 /* RouteCell.xib in Resources */,
+-				288F6B9D14FBF85900B64602 /* RouteToolCell.xib in Resources */,
+ 				28187A9E14FCFF4C00A38A17 /* Alert200x200.png in Resources */,
+ 				28187A9F14FCFF4C00A38A17 /* CSIcon_MapArrow_end.png in Resources */,
+ 				28187AA014FCFF4C00A38A17 /* CSIcon_MapArrow_start.png in Resources */,
+ @@ -3070,7 +3023,6 @@
+ 				2834365D15DD5DC300B00FD5 /* POICatLocationCell.xib in Resources */,
+ 				2834365E15DD5DC300B00FD5 /* POICategoryView.xib in Resources */,
+ 				2834365F15DD5DC300B00FD5 /* RouteCell.xib in Resources */,
+-				2834366015DD5DC300B00FD5 /* RouteToolCell.xib in Resources */,
+ 				2834366115DD5DC300B00FD5 /* Alert200x200.png in Resources */,
+ 				2834366215DD5DC300B00FD5 /* CSIcon_MapArrow_end.png in Resources */,
+ 				2834366315DD5DC300B00FD5 /* CSIcon_MapArrow_start.png in Resources */,
+ @@ -3347,7 +3299,6 @@
+ 				28E8A3CC1455638D0063AA96 /* SegmentVO.m in Sources */,
+ 				28E8A3E61455B6D10063AA96 /* SavedRoutesManager.m in Sources */,
+ 				288B10281457492500E2A96F /* RoutesViewController.m in Sources */,
+-				288F6BA014FBF91700B64602 /* RouteToolCellView.m in Sources */,
+ 				28187A3314FCC7EF00A38A17 /* UserLocationManager.m in Sources */,
+ 				28A89CCC14FD4A610001BABA /* PhotoWizardViewController.m in Sources */,
+ 				28A89CD514FD52230001BABA /* UploadPhotoVO.m in Sources */,
+ @@ -3368,9 +3319,6 @@
+ 				289F78051534432B00B062D1 /* NSString-Utilities.m in Sources */,
+ 				28C0185B153D74C500023FAF /* PhotoCategoryManager.m in Sources */,
+ 				28C0185E153D7BF100023FAF /* PhotoCategoryVO.m in Sources */,
+-				28C3CF6415775A7800A49D5C /* NSNotificationCenter+SFObservers.m in Sources */,
+-				28C3CF6515775A7800A49D5C /* NSObject+SFObservers.m in Sources */,
+-				28C3CF6615775A7800A49D5C /* NSObject+SFExecuteOnDealloc.m in Sources */,
+ 				2858F2B4158617290047283D /* MapLocationSearchCellView.m in Sources */,
+ 				28C8342315A3604D00EE58B5 /* PhotoWizardCategoryMenuViewController.m in Sources */,
+ 				28DFE8D815A428DD005FDCA0 /* PhotoWizardCategoryCellView.m in Sources */,
+ @@ -3517,7 +3465,6 @@
+ 				2834374A15DD5DC300B00FD5 /* SegmentVO.m in Sources */,
+ 				2834374B15DD5DC300B00FD5 /* SavedRoutesManager.m in Sources */,
+ 				2834374C15DD5DC300B00FD5 /* RoutesViewController.m in Sources */,
+-				2834374D15DD5DC300B00FD5 /* RouteToolCellView.m in Sources */,
+ 				2834374E15DD5DC300B00FD5 /* UserLocationManager.m in Sources */,
+ 				2834374F15DD5DC300B00FD5 /* PhotoWizardViewController.m in Sources */,
+ 				2834375015DD5DC300B00FD5 /* UploadPhotoVO.m in Sources */,
+ @@ -3538,9 +3485,6 @@
+ 				2834375F15DD5DC300B00FD5 /* NSString-Utilities.m in Sources */,
+ 				2834376015DD5DC300B00FD5 /* PhotoCategoryManager.m in Sources */,
+ 				2834376115DD5DC300B00FD5 /* PhotoCategoryVO.m in Sources */,
+-				2834376215DD5DC300B00FD5 /* NSNotificationCenter+SFObservers.m in Sources */,
+-				2834376315DD5DC300B00FD5 /* NSObject+SFObservers.m in Sources */,
+-				2834376415DD5DC300B00FD5 /* NSObject+SFExecuteOnDealloc.m in Sources */,
+ 				2834376515DD5DC300B00FD5 /* MapLocationSearchCellView.m in Sources */,
+ 				2834376615DD5DC300B00FD5 /* PhotoWizardCategoryMenuViewController.m in Sources */,
+ 				2834376715DD5DC300B00FD5 /* PhotoWizardCategoryCellView.m in Sources */,
+View BIN  ....xcodeproj/project.xcworkspace/xcuserdata/neil.xcuserdatad/UserInterfaceState.xcuserstate
+Binary file not shown
+View 19  CycleStreets.xcodeproj/xcuserdata/neil.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist
+ @@ -650,11 +650,11 @@
+          ignoreCount = "0"
+          continueAfterRunningActions = "No"
+          filePath = "src/controllers/PhotoWizard/PhotoWizardViewController.m"
+-         timestampString = "369135334.162823"
++         timestampString = "372591604.255287"
+          startingColumnNumber = "9223372036854775807"
+          endingColumnNumber = "9223372036854775807"
+-         startingLineNumber = "837"
+-         endingLineNumber = "837"
++         startingLineNumber = "838"
++         endingLineNumber = "838"
+          landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
+          landmarkType = "5">
+       </FileBreakpoint>
+ @@ -801,6 +801,19 @@
+          landmarkName = "@implementation UserLocationManager"
+          landmarkType = "3">
+       </FileBreakpoint>
++      <FileBreakpoint
++         shouldBeEnabled = "Yes"
++         ignoreCount = "0"
++         continueAfterRunningActions = "No"
++         filePath = "src/managers/RouteManager.m"
++         timestampString = "372158105.509949"
++         startingColumnNumber = "9223372036854775807"
++         endingColumnNumber = "9223372036854775807"
++         startingLineNumber = "423"
++         endingLineNumber = "423"
++         landmarkName = "-loadRouteForRouting:"
++         landmarkType = "5">
++      </FileBreakpoint>
+    </FileBreakpoints>
+    <SymbolicBreakpoints>
+       <SymbolicBreakpoint
+View 3  CycleStreets.xcodeproj/xcuserdata/neil.xcuserdatad/xcschemes/Release CycleStreets.xcscheme
+ @@ -59,6 +59,9 @@
+       </BuildableProductRunnable>
+       <AdditionalOptions>
+       </AdditionalOptions>
++      <RoutingCoverageFileReference
++         identifier = "../../resources/cyclestreets.geojson">
++      </RoutingCoverageFileReference>
+    </LaunchAction>
+    <ProfileAction
+       shouldUseLaunchSchemeArgsEnv = "YES"
+View 1  CycleStreets_Prefix.pch
+ @@ -7,6 +7,5 @@
+     #import <UIKit/UIKit.h>
+ #import "GenericConstants.h"
+ #import "AppConstants.h"
+-#import "SFObservers.h"
+ #endif
+ 
+View 2  lib/external/SFObservers/SFObservers.h
+ @@ -77,7 +77,7 @@
+ #endif
+ #endif
+ 
+-#define SF_OBSERVERS_LOG_ORIGINAL_METHODS 0
++#define SF_OBSERVERS_LOG_ORIGINAL_METHODS 1
+ 
+ #import "NSObject+SFExecuteOnDealloc.h"
+ #import "NSNotificationCenter+SFObservers.h"
+View BIN  resources/images/x1/CSBarButton_routePlan.png
+
+View BIN  resources/images/x1/CSBarButton_routePlanx.png
+
+View BIN  resources/images/x2/CSBarButton_routePlan@2x.png
+
+View BIN  resources/images/x2/CSBarButton_routePlan@2xx.png
+
+View 230  resources/xib/cells/RouteToolCell.xib
+@@ -1,230 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
+-	<data>
+-		<int key="IBDocument.SystemTarget">1280</int>
+-		<string key="IBDocument.SystemVersion">11D50</string>
+-		<string key="IBDocument.InterfaceBuilderVersion">2177</string>
+-		<string key="IBDocument.AppKitVersion">1138.32</string>
+-		<string key="IBDocument.HIToolboxVersion">568.00</string>
+-		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
+-			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+-			<string key="NS.object.0">1173</string>
+-		</object>
+-		<array key="IBDocument.IntegratedClassDependencies">
+-			<string>IBProxyObject</string>
+-			<string>IBUIButton</string>
+-			<string>IBUITableViewCell</string>
+-		</array>
+-		<array key="IBDocument.PluginDependencies">
+-			<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+-		</array>
+-		<object class="NSMutableDictionary" key="IBDocument.Metadata">
+-			<string key="NS.key.0">PluginDependencyRecalculationVersion</string>
+-			<integer value="1" key="NS.object.0"/>
+-		</object>
+-		<array class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
+-			<object class="IBProxyObject" id="841351856">
+-				<string key="IBProxiedObjectIdentifier">IBFilesOwner</string>
+-				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+-			</object>
+-			<object class="IBProxyObject" id="371349661">
+-				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
+-				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+-			</object>
+-			<object class="IBUITableViewCell" id="342151953">
+-				<reference key="NSNextResponder"/>
+-				<int key="NSvFlags">292</int>
+-				<array class="NSMutableArray" key="NSSubviews">
+-					<object class="IBUIView" id="326429496">
+-						<reference key="NSNextResponder" ref="342151953"/>
+-						<int key="NSvFlags">256</int>
+-						<array class="NSMutableArray" key="NSSubviews">
+-							<object class="IBUIButton" id="584861895">
+-								<reference key="NSNextResponder" ref="326429496"/>
+-								<int key="NSvFlags">292</int>
+-								<string key="NSFrame">{{20, 6}, {76, 32}}</string>
+-								<reference key="NSSuperview" ref="326429496"/>
+-								<reference key="NSWindow"/>
+-								<reference key="NSNextKeyView" ref="501418717"/>
+-								<string key="NSReuseIdentifierKey">_NS:9</string>
+-								<bool key="IBUIOpaque">NO</bool>
+-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+-								<int key="IBUIContentHorizontalAlignment">0</int>
+-								<int key="IBUIContentVerticalAlignment">0</int>
+-								<int key="IBUIButtonType">1</int>
+-								<string key="IBUINormalTitle">Fav</string>
+-								<object class="NSColor" key="IBUIHighlightedTitleColor" id="495689723">
+-									<int key="NSColorSpace">3</int>
+-									<bytes key="NSWhite">MQA</bytes>
+-								</object>
+-								<reference key="IBUINormalTitleColor" ref="495689723"/>
+-								<object class="NSColor" key="IBUINormalTitleShadowColor" id="142816566">
+-									<int key="NSColorSpace">3</int>
+-									<bytes key="NSWhite">MC41AA</bytes>
+-								</object>
+-								<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="879630825">
+-									<string key="NSClassName">NSImage</string>
+-									<string key="NSResourceName">UIButton_red_lo.png</string>
+-								</object>
+-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="212613927">
+-									<int key="type">2</int>
+-									<double key="pointSize">15</double>
+-								</object>
+-								<object class="NSFont" key="IBUIFont" id="262497308">
+-									<string key="NSName">Helvetica-Bold</string>
+-									<double key="NSSize">15</double>
+-									<int key="NSfFlags">16</int>
+-								</object>
+-							</object>
+-							<object class="IBUIButton" id="501418717">
+-								<reference key="NSNextResponder" ref="326429496"/>
+-								<int key="NSvFlags">292</int>
+-								<string key="NSFrame">{{218, 6}, {76, 32}}</string>
+-								<reference key="NSSuperview" ref="326429496"/>
+-								<reference key="NSWindow"/>
+-								<reference key="NSNextKeyView"/>
+-								<string key="NSReuseIdentifierKey">_NS:9</string>
+-								<bool key="IBUIOpaque">NO</bool>
+-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+-								<int key="IBUIContentHorizontalAlignment">0</int>
+-								<int key="IBUIContentVerticalAlignment">0</int>
+-								<int key="IBUIButtonType">1</int>
+-								<string key="IBUINormalTitle">View</string>
+-								<reference key="IBUIHighlightedTitleColor" ref="495689723"/>
+-								<reference key="IBUINormalTitleColor" ref="495689723"/>
+-								<reference key="IBUINormalTitleShadowColor" ref="142816566"/>
+-								<reference key="IBUINormalBackgroundImage" ref="879630825"/>
+-								<reference key="IBUIFontDescription" ref="212613927"/>
+-								<reference key="IBUIFont" ref="262497308"/>
+-							</object>
+-						</array>
+-						<string key="NSFrameSize">{320, 43}</string>
+-						<reference key="NSSuperview" ref="342151953"/>
+-						<reference key="NSWindow"/>
+-						<reference key="NSNextKeyView" ref="584861895"/>
+-						<string key="NSReuseIdentifierKey">_NS:11</string>
+-						<object class="NSColor" key="IBUIBackgroundColor">
+-							<int key="NSColorSpace">3</int>
+-							<bytes key="NSWhite">MCAwAA</bytes>
+-						</object>
+-						<bool key="IBUIOpaque">NO</bool>
+-						<bool key="IBUIClipsSubviews">YES</bool>
+-						<int key="IBUIContentMode">4</int>
+-						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+-					</object>
+-				</array>
+-				<string key="NSFrameSize">{320, 44}</string>
+-				<reference key="NSSuperview"/>
+-				<reference key="NSWindow"/>
+-				<reference key="NSNextKeyView" ref="326429496"/>
+-				<string key="NSReuseIdentifierKey">_NS:9</string>
+-				<object class="NSColor" key="IBUIBackgroundColor">
+-					<int key="NSColorSpace">3</int>
+-					<bytes key="NSWhite">MC40OTg0OTM5Njk0AA</bytes>
+-				</object>
+-				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+-				<int key="IBUISelectionStyle">0</int>
+-				<reference key="IBUIContentView" ref="326429496"/>
+-				<string key="IBUIReuseIdentifier">RouteToolCellIdentifier</string>
+-			</object>
+-		</array>
+-		<object class="IBObjectContainer" key="IBDocument.Objects">
+-			<array class="NSMutableArray" key="connectionRecords"/>
+-			<object class="IBMutableOrderedSet" key="objectRecords">
+-				<array key="orderedObjects">
+-					<object class="IBObjectRecord">
+-						<int key="objectID">0</int>
+-						<array key="object" id="0"/>
+-						<reference key="children" ref="1000"/>
+-						<nil key="parent"/>
+-					</object>
+-					<object class="IBObjectRecord">
+-						<int key="objectID">-1</int>
+-						<reference key="object" ref="841351856"/>
+-						<reference key="parent" ref="0"/>
+-						<string key="objectName">File's Owner</string>
+-					</object>
+-					<object class="IBObjectRecord">
+-						<int key="objectID">-2</int>
+-						<reference key="object" ref="371349661"/>
+-						<reference key="parent" ref="0"/>
+-					</object>
+-					<object class="IBObjectRecord">
+-						<int key="objectID">2</int>
+-						<reference key="object" ref="342151953"/>
+-						<array class="NSMutableArray" key="children">
+-							<reference ref="584861895"/>
+-							<reference ref="501418717"/>
+-						</array>
+-						<reference key="parent" ref="0"/>
+-					</object>
+-					<object class="IBObjectRecord">
+-						<int key="objectID">3</int>
+-						<reference key="object" ref="584861895"/>
+-						<reference key="parent" ref="342151953"/>
+-					</object>
+-					<object class="IBObjectRecord">
+-						<int key="objectID">4</int>
+-						<reference key="object" ref="501418717"/>
+-						<reference key="parent" ref="342151953"/>
+-					</object>
+-				</array>
+-			</object>
+-			<dictionary class="NSMutableDictionary" key="flattenedProperties">
+-				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+-				<string key="-2.CustomClassName">UIResponder</string>
+-				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+-				<string key="2.CustomClassName">RouteToolCellView</string>
+-				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+-				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+-				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+-			</dictionary>
+-			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
+-			<nil key="activeLocalization"/>
+-			<dictionary class="NSMutableDictionary" key="localizations"/>
+-			<nil key="sourceID"/>
+-			<int key="maxID">4</int>
+-		</object>
+-		<object class="IBClassDescriber" key="IBDocument.Classes">
+-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+-				<object class="IBPartialClassDescription">
+-					<string key="className">BUTableCellView</string>
+-					<string key="superclassName">UITableViewCell</string>
+-					<object class="NSMutableDictionary" key="actions">
+-						<string key="NS.key.0">cellButtonWasSelected:</string>
+-						<string key="NS.object.0">id</string>
+-					</object>
+-					<object class="NSMutableDictionary" key="actionInfosByName">
+-						<string key="NS.key.0">cellButtonWasSelected:</string>
+-						<object class="IBActionInfo" key="NS.object.0">
+-							<string key="name">cellButtonWasSelected:</string>
+-							<string key="candidateClassName">id</string>
+-						</object>
+-					</object>
+-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+-						<string key="majorKey">IBProjectSource</string>
+-						<string key="minorKey">./Classes/BUTableCellView.h</string>
+-					</object>
+-				</object>
+-				<object class="IBPartialClassDescription">
+-					<string key="className">RouteToolCellView</string>
+-					<string key="superclassName">BUTableCellView</string>
+-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+-						<string key="majorKey">IBProjectSource</string>
+-						<string key="minorKey">./Classes/RouteToolCellView.h</string>
+-					</object>
+-				</object>
+-			</array>
+-		</object>
+-		<int key="IBDocument.localizationMode">0</int>
+-		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
+-		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
+-		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+-			<string key="NS.key.0">UIButton_red_lo.png</string>
+-			<string key="NS.object.0">{30, 30}</string>
+-		</object>
+-		<string key="IBCocoaTouchPluginVersion">1173</string>
+-	</data>
+-</archive>
+View 405  resources/xib/controllers/photowizard/PhotoWizardView.xib
+@@ -1,14 +1,14 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
+ 	<data>
+-		<int key="IBDocument.SystemTarget">1296</int>
+-		<string key="IBDocument.SystemVersion">11E2705</string>
+-		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
+-		<string key="IBDocument.AppKitVersion">1138.47</string>
+-		<string key="IBDocument.HIToolboxVersion">569.00</string>
++		<int key="IBDocument.SystemTarget">1536</int>
++		<string key="IBDocument.SystemVersion">12C54</string>
++		<string key="IBDocument.InterfaceBuilderVersion">2843</string>
++		<string key="IBDocument.AppKitVersion">1187.34</string>
++		<string key="IBDocument.HIToolboxVersion">625.00</string>
+ 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
+ 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+-			<string key="NS.object.0">1498</string>
++			<string key="NS.object.0">1929</string>
+ 		</object>
+ 		<array key="IBDocument.IntegratedClassDependencies">
+ 			<string>IBProxyObject</string>
+ @@ -48,7 +48,6 @@
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{0, 64}, {320, 368}}</string>
+ 						<reference key="NSSuperview" ref="191373211"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="54196122"/>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+ @@ -64,7 +63,6 @@
+ 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
+ 								<string key="NSFrame">{{141, -3}, {38, 36}}</string>
+ 								<reference key="NSSuperview" ref="54196122"/>
+-								<reference key="NSWindow"/>
+ 								<bool key="IBUIOpaque">NO</bool>
+ 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+ 								<int key="IBUIContentHorizontalAlignment">0</int>
+ @@ -74,7 +72,6 @@
+ 						</array>
+ 						<string key="NSFrame">{{0, 430}, {320, 30}}</string>
+ 						<reference key="NSSuperview" ref="191373211"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="304378180"/>
+ 						<object class="NSColor" key="IBUIBackgroundColor">
+ 							<int key="NSColorSpace">1</int>
+ @@ -91,7 +88,6 @@
+ 								<int key="NSvFlags">292</int>
+ 								<string key="NSFrame">{{10, 0}, {145, 22}}</string>
+ 								<reference key="NSSuperview" ref="58818224"/>
+-								<reference key="NSWindow"/>
+ 								<reference key="NSNextKeyView" ref="750121600"/>
+ 								<bool key="IBUIOpaque">NO</bool>
+ 								<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -127,7 +123,6 @@
+ 								<int key="NSvFlags">292</int>
+ 								<string key="NSFrame">{{243, 0}, {57, 22}}</string>
+ 								<reference key="NSSuperview" ref="58818224"/>
+-								<reference key="NSWindow"/>
+ 								<reference key="NSNextKeyView" ref="600549222"/>
+ 								<bool key="IBUIOpaque">NO</bool>
+ 								<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -147,7 +142,6 @@
+ 						</array>
+ 						<string key="NSFrame">{{0, 44}, {320, 22}}</string>
+ 						<reference key="NSSuperview" ref="191373211"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="697603202"/>
+ 						<object class="NSColor" key="IBUIBackgroundColor">
+ 							<int key="NSColorSpace">1</int>
+ @@ -160,7 +154,6 @@
+ 						<int key="NSvFlags">266</int>
+ 						<string key="NSFrameSize">{320, 44}</string>
+ 						<reference key="NSSuperview" ref="191373211"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="58818224"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+ @@ -202,7 +195,6 @@
+ 				</array>
+ 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
+ 				<reference key="NSSuperview"/>
+-				<reference key="NSWindow"/>
+ 				<reference key="NSNextKeyView" ref="350320062"/>
+ 				<object class="NSColor" key="IBUIBackgroundColor">
+ 					<int key="NSColorSpace">3</int>
+ @@ -223,7 +215,6 @@
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{20, 20}, {172, 139}}</string>
+ 						<reference key="NSSuperview" ref="274363151"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="335464081"/>
+ 						<object class="NSColor" key="IBUIBackgroundColor" id="939536182">
+ 							<int key="NSColorSpace">3</int>
+ @@ -241,7 +232,6 @@
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{20, 178}, {114, 37}}</string>
+ 						<reference key="NSSuperview" ref="274363151"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="1037952743"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+ @@ -276,7 +266,6 @@
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{200, 20}, {105, 22}}</string>
+ 						<reference key="NSSuperview" ref="274363151"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="203883790"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -301,7 +290,6 @@
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{200, 43}, {105, 22}}</string>
+ 						<reference key="NSSuperview" ref="274363151"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="227736212"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -332,7 +320,6 @@
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{191, 178}, {114, 37}}</string>
+ 						<reference key="NSSuperview" ref="274363151"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="38752739"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+ @@ -357,7 +344,6 @@
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{20, 228}, {271, 73}}</string>
+ 						<reference key="NSSuperview" ref="274363151"/>
+-						<reference key="NSWindow"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ 						<int key="IBUIContentMode">7</int>
+ @@ -373,13 +359,13 @@
+ 						<int key="IBUINumberOfLines">0</int>
+ 						<reference key="IBUIFontDescription" ref="469621304"/>
+ 						<reference key="IBUIFont" ref="243249860"/>
++						<double key="preferredMaxLayoutWidth">271</double>
+ 					</object>
+ 					<object class="IBUILabel" id="227736212">
+ 						<reference key="NSNextResponder" ref="274363151"/>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{200, 68}, {105, 22}}</string>
+ 						<reference key="NSSuperview" ref="274363151"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="501082558"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -404,7 +390,6 @@
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{200, 88}, {105, 22}}</string>
+ 						<reference key="NSSuperview" ref="274363151"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="617380829"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -426,7 +411,6 @@
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{200, 117}, {105, 22}}</string>
+ 						<reference key="NSSuperview" ref="274363151"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="984686831"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -451,7 +435,6 @@
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{200, 137}, {105, 22}}</string>
+ 						<reference key="NSSuperview" ref="274363151"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="1019943110"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -471,7 +454,6 @@
+ 				</array>
+ 				<string key="NSFrameSize">{320, 365}</string>
+ 				<reference key="NSSuperview"/>
+-				<reference key="NSWindow"/>
+ 				<reference key="NSNextKeyView" ref="457962553"/>
+ 				<object class="NSColor" key="IBUIBackgroundColor">
+ 					<int key="NSColorSpace">2</int>
+ @@ -488,7 +470,6 @@
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{51, 14}, {218, 22}}</string>
+ 						<reference key="NSSuperview" ref="846205208"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="528413665"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -514,7 +495,6 @@
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{20, 27}, {280, 56}}</string>
+ 						<reference key="NSSuperview" ref="846205208"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="806267843"/>
+ 						<reference key="IBUIBackgroundColor" ref="939536182"/>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -545,7 +525,6 @@
+ 						<int key="NSvFlags">274</int>
+ 						<string key="NSFrame">{{20, 91}, {280, 236}}</string>
+ 						<reference key="NSSuperview" ref="846205208"/>
+-						<reference key="NSWindow"/>
+ 						<int key="IBUIContentMode">1</int>
+ 						<bool key="IBUIUserInteractionEnabled">NO</bool>
+ 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+ @@ -553,7 +532,6 @@
+ 				</array>
+ 				<string key="NSFrameSize">{320, 347}</string>
+ 				<reference key="NSSuperview"/>
+-				<reference key="NSWindow"/>
+ 				<reference key="NSNextKeyView" ref="156897639"/>
+ 				<object class="NSColor" key="IBUIBackgroundColor">
+ 					<int key="NSColorSpace">2</int>
+ @@ -570,7 +548,6 @@
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{51, 20}, {218, 22}}</string>
+ 						<reference key="NSSuperview" ref="233464367"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="492161639"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -596,7 +573,6 @@
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{20, 41}, {280, 145}}</string>
+ 						<reference key="NSSuperview" ref="233464367"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="140858961"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -618,13 +594,13 @@ dGlvbi4KA</string>
+ 						<int key="IBUITextAlignment">1</int>
+ 						<reference key="IBUIFontDescription" ref="469621304"/>
+ 						<reference key="IBUIFont" ref="243249860"/>
++						<double key="preferredMaxLayoutWidth">280</double>
+ 					</object>
+ 					<object class="IBUIButton" id="30016029">
+ 						<reference key="NSNextResponder" ref="233464367"/>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{94, 226}, {133, 37}}</string>
+ 						<reference key="NSSuperview" ref="233464367"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="254201973"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+ @@ -656,7 +632,6 @@ dGlvbi4KA</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{46, 202}, {229, 11}}</string>
+ 						<reference key="NSSuperview" ref="233464367"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="30016029"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+ @@ -671,7 +646,6 @@ dGlvbi4KA</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{20, 274}, {280, 20}}</string>
+ 						<reference key="NSSuperview" ref="233464367"/>
+-						<reference key="NSWindow"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ 						<int key="IBUIContentMode">7</int>
+ @@ -688,11 +662,11 @@ dGlvbi4KA</string>
+ 						<int key="IBUITextAlignment">1</int>
+ 						<reference key="IBUIFontDescription" ref="469621304"/>
+ 						<reference key="IBUIFont" ref="243249860"/>
++						<double key="preferredMaxLayoutWidth">280</double>
+ 					</object>
+ 				</array>
+ 				<string key="NSFrameSize">{320, 324}</string>
+ 				<reference key="NSSuperview"/>
+-				<reference key="NSWindow"/>
+ 				<reference key="NSNextKeyView" ref="252786629"/>
+ 				<object class="NSColor" key="IBUIBackgroundColor">
+ 					<int key="NSColorSpace">1</int>
+ @@ -709,7 +683,6 @@ dGlvbi4KA</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{20, 223}, {105, 22}}</string>
+ 						<reference key="NSSuperview" ref="76513693"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="823044364"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -734,7 +707,6 @@ dGlvbi4KA</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{93, 223}, {205, 22}}</string>
+ 						<reference key="NSSuperview" ref="76513693"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="842298367"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -757,7 +729,6 @@ dGlvbi4KA</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{105, 306}, {109, 37}}</string>
+ 						<reference key="NSSuperview" ref="76513693"/>
+-						<reference key="NSWindow"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+ 							<string key="IBUIAccessibilityLabel">Change photo location</string>
+ @@ -781,7 +752,6 @@ dGlvbi4KA</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{23, 243}, {276, 55}}</string>
+ 						<reference key="NSSuperview" ref="76513693"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="302184185"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -798,13 +768,13 @@ dGlvbi4KA</string>
+ 						<int key="IBUINumberOfLines">0</int>
+ 						<reference key="IBUIFontDescription" ref="469621304"/>
+ 						<reference key="IBUIFont" ref="243249860"/>
++						<double key="preferredMaxLayoutWidth">276</double>
+ 					</object>
+ 					<object class="IBUIView" id="172918247">
+ 						<reference key="NSNextResponder" ref="76513693"/>
+ 						<int key="NSvFlags">274</int>
+ 						<string key="NSFrame">{{20, 25}, {278, 183}}</string>
+ 						<reference key="NSSuperview" ref="76513693"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="365344532"/>
+ 						<object class="NSColor" key="IBUIBackgroundColor">
+ 							<int key="NSColorSpace">3</int>
+ @@ -821,7 +791,6 @@ dGlvbi4KA</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{20, 25}, {279, 183}}</string>
+ 						<reference key="NSSuperview" ref="76513693"/>
+-						<reference key="NSWindow"/>
+ 						<string key="NSReuseIdentifierKey">_NS:9</string>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+ @@ -839,7 +808,6 @@ dGlvbi4KA</string>
+ 				</array>
+ 				<string key="NSFrameSize">{320, 363}</string>
+ 				<reference key="NSSuperview"/>
+-				<reference key="NSWindow"/>
+ 				<reference key="NSNextKeyView" ref="172918247"/>
+ 				<object class="NSColor" key="IBUIBackgroundColor">
+ 					<int key="NSColorSpace">2</int>
+ @@ -900,6 +868,7 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 						<int key="IBUITextAlignment">1</int>
+ 						<reference key="IBUIFontDescription" ref="469621304"/>
+ 						<reference key="IBUIFont" ref="243249860"/>
++						<double key="preferredMaxLayoutWidth">280</double>
+ 					</object>
+ 					<object class="IBUIButton" id="962109428">
+ 						<reference key="NSNextResponder" ref="595152327"/>
+ @@ -942,7 +911,6 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{51, 20}, {218, 22}}</string>
+ 						<reference key="NSSuperview" ref="478352901"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="839890151"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -968,7 +936,6 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{15, 150}, {280, 31}}</string>
+ 						<reference key="NSSuperview" ref="478352901"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="313847648"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -986,13 +953,13 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 						<int key="IBUITextAlignment">1</int>
+ 						<reference key="IBUIFontDescription" ref="469621304"/>
+ 						<reference key="IBUIFont" ref="243249860"/>
++						<double key="preferredMaxLayoutWidth">280</double>
+ 					</object>
+ 					<object class="IBUIButton" id="232098493">
+ 						<reference key="NSNextResponder" ref="478352901"/>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{89, 295}, {133, 37}}</string>
+ 						<reference key="NSSuperview" ref="478352901"/>
+-						<reference key="NSWindow"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+ 							<string key="IBUIAccessibilityLabel">View your photo on map</string>
+ @@ -1016,7 +983,6 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{114, 35}, {93, 109}}</string>
+ 						<reference key="NSSuperview" ref="478352901"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="901932308"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -1050,7 +1016,6 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{15, 248}, {280, 37}}</string>
+ 						<reference key="NSSuperview" ref="478352901"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="232098493"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -1068,13 +1033,13 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 						<int key="IBUITextAlignment">1</int>
+ 						<reference key="IBUIFontDescription" ref="469621304"/>
+ 						<reference key="IBUIFont" ref="243249860"/>
++						<double key="preferredMaxLayoutWidth">280</double>
+ 					</object>
+ 					<object class="IBUILabel" id="313847648">
+ 						<reference key="NSNextResponder" ref="478352901"/>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{15, 176}, {280, 20}}</string>
+ 						<reference key="NSSuperview" ref="478352901"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="449878706"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -1095,13 +1060,13 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 						<int key="IBUITextAlignment">1</int>
+ 						<reference key="IBUIFontDescription" ref="469621304"/>
+ 						<reference key="IBUIFont" ref="243249860"/>
++						<double key="preferredMaxLayoutWidth">280</double>
+ 					</object>
+ 					<object class="IBUILabel" id="449878706">
+ 						<reference key="NSNextResponder" ref="478352901"/>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{15, 199}, {280, 37}}</string>
+ 						<reference key="NSSuperview" ref="478352901"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="230741372"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -1128,11 +1093,11 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 							<double key="NSSize">11</double>
+ 							<int key="NSfFlags">16</int>
+ 						</object>
++						<double key="preferredMaxLayoutWidth">280</double>
+ 					</object>
+ 				</array>
+ 				<string key="NSFrameSize">{320, 375}</string>
+ 				<reference key="NSSuperview"/>
+-				<reference key="NSWindow"/>
+ 				<reference key="NSNextKeyView" ref="519322205"/>
+ 				<object class="NSColor" key="IBUIBackgroundColor">
+ 					<int key="NSColorSpace">2</int>
+ @@ -1149,7 +1114,6 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{51, 14}, {218, 22}}</string>
+ 						<reference key="NSSuperview" ref="472039322"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="279147385"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -1175,7 +1139,6 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{20, 27}, {280, 74}}</string>
+ 						<reference key="NSSuperview" ref="472039322"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="539326667"/>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+ @@ -1205,7 +1168,6 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{20, 87}, {249, 22}}</string>
+ 						<reference key="NSSuperview" ref="472039322"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="295466913"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -1230,7 +1192,6 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{20, 109}, {280, 37}}</string>
+ 						<reference key="NSSuperview" ref="472039322"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="140567249"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+ @@ -1255,7 +1216,6 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{20, 159}, {249, 22}}</string>
+ 						<reference key="NSSuperview" ref="472039322"/>
+-						<reference key="NSWindow"/>
+ 						<reference key="NSNextKeyView" ref="449451453"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<bool key="IBUIClipsSubviews">YES</bool>
+ @@ -1280,7 +1240,6 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 						<int key="NSvFlags">292</int>
+ 						<string key="NSFrame">{{20, 181}, {280, 37}}</string>
+ 						<reference key="NSSuperview" ref="472039322"/>
+-						<reference key="NSWindow"/>
+ 						<bool key="IBUIOpaque">NO</bool>
+ 						<int key="IBUITag">1</int>
+ 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+ @@ -1303,7 +1262,6 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 				</array>
+ 				<string key="NSFrameSize">{320, 320}</string>
+ 				<reference key="NSSuperview"/>
+-				<reference key="NSWindow"/>
+ 				<reference key="NSNextKeyView" ref="209875794"/>
+ 				<object class="NSColor" key="IBUIBackgroundColor">
+ 					<int key="NSColorSpace">2</int>
+ @@ -1595,6 +1553,14 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 					<int key="connectionID">208</int>
+ 				</object>
+ 				<object class="IBConnectionRecord">
++					<object class="IBCocoaTouchOutletConnection" key="connection">
++						<string key="label">cancelViewButton</string>
++						<reference key="source" ref="372490531"/>
++						<reference key="destination" ref="338314192"/>
++					</object>
++					<int key="connectionID">212</int>
++				</object>
++				<object class="IBConnectionRecord">
+ 					<object class="IBCocoaTouchEventConnection" key="connection">
+ 						<string key="label">cameraButtonSelected:</string>
+ 						<reference key="source" ref="1019943110"/>
+ @@ -2143,334 +2109,17 @@ b24gdGhlIFBob3RvbWFwLg</string>
+ 			<nil key="activeLocalization"/>
+ 			<dictionary class="NSMutableDictionary" key="localizations"/>
+ 			<nil key="sourceID"/>
+-			<int key="maxID">211</int>
+-		</object>
+-		<object class="IBClassDescriber" key="IBDocument.Classes">
+-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+-				<object class="IBPartialClassDescription">
+-					<string key="className">CopyLabel</string>
+-					<string key="superclassName">ExpandedUILabel</string>
+-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+-						<string key="majorKey">IBProjectSource</string>
+-						<string key="minorKey">./Classes/CopyLabel.h</string>
+-					</object>
+-				</object>
+-				<object class="IBPartialClassDescription">
+-					<string key="className">ExpandedUILabel</string>
+-					<string key="superclassName">UILabel</string>
+-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+-						<string key="majorKey">IBProjectSource</string>
+-						<string key="minorKey">./Classes/ExpandedUILabel.h</string>
+-					</object>
+-				</object>
+-				<object class="IBPartialClassDescription">
+-					<string key="className">PhotoWizardViewController</string>
+-					<string key="superclassName">SuperViewController</string>
+-					<dictionary class="NSMutableDictionary" key="actions">
+-						<string key="cameraButtonSelected:">id</string>
+-						<string key="cancelUploadPhoto:">id</string>
+-						<string key="closeWindowButtonSelected:">id</string>
+-						<string key="libraryButtonSelected:">id</string>
+-						<string key="navigateToNextView:">id</string>
+-						<string key="navigateToPreviousView:">id</string>
+-						<string key="pageControlValueChanged:">id</string>
+-						<string key="showCategoryMenu:">id</string>
+-						<string key="textViewKeyboardShouldClear:">id</string>
+-						<string key="textViewKeyboardShouldHide:">id</string>
+-					</dictionary>
+-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+-						<object class="IBActionInfo" key="cameraButtonSelected:">
+-							<string key="name">cameraButtonSelected:</string>
+-							<string key="candidateClassName">id</string>
+-						</object>
+-						<object class="IBActionInfo" key="cancelUploadPhoto:">
+-							<string key="name">cancelUploadPhoto:</string>
+-							<string key="candidateClassName">id</string>
+-						</object>
+-						<object class="IBActionInfo" key="closeWindowButtonSelected:">
+-							<string key="name">closeWindowButtonSelected:</string>
+-							<string key="candidateClassName">id</string>
+-						</object>
+-						<object class="IBActionInfo" key="libraryButtonSelected:">
+-							<string key="name">libraryButtonSelected:</string>
+-							<string key="candidateClassName">id</string>
+-						</object>
+-						<object class="IBActionInfo" key="navigateToNextView:">
+-							<string key="name">navigateToNextView:</string>
+-							<string key="candidateClassName">id</string>
+-						</object>
+-						<object class="IBActionInfo" key="navigateToPreviousView:">
+-							<string key="name">navigateToPreviousView:</string>
+-							<string key="candidateClassName">id</string>
+-						</object>
+-						<object class="IBActionInfo" key="pageControlValueChanged:">
+-							<string key="name">pageControlValueChanged:</string>
+-							<string key="candidateClassName">id</string>
+-						</object>
+-						<object class="IBActionInfo" key="showCategoryMenu:">
+-							<string key="name">showCategoryMenu:</string>
+-							<string key="candidateClassName">id</string>
+-						</object>
+-						<object class="IBActionInfo" key="textViewKeyboardShouldClear:">
+-							<string key="name">textViewKeyboardShouldClear:</string>
+-							<string key="candidateClassName">id</string>
+-						</object>
+-						<object class="IBActionInfo" key="textViewKeyboardShouldHide:">
+-							<string key="name">textViewKeyboardShouldHide:</string>
+-							<string key="candidateClassName">id</string>
+-						</object>
+-					</dictionary>
+-					<dictionary class="NSMutableDictionary" key="outlets">
+-						<string key="cameraButton">UIButton</string>
+-						<string key="cancelButton">UIButton</string>
+-						<string key="categoryButton">UIButton</string>
+-						<string key="categoryDescLabel">UILabel</string>
+-						<string key="categoryFeaturebutton">UIButton</string>
+-						<string key="categoryTypeLabel">UILabel</string>
+-						<string key="categoryView">UIView</string>
+-						<string key="continueButton">UIButton</string>
+-						<string key="descImagePreview">UIImageView</string>
+-						<string key="footerView">UIView</string>
+-						<string key="headerView">UIView</string>
+-						<string key="imagePreview">UIImageView</string>
+-						<string key="infoView">UIView</string>
+-						<string key="libraryButton">UIButton</string>
+-						<string key="locationLabel">UILabel</string>
+-						<string key="locationMapView">RMMapView</string>
+-						<string key="locationResetButton">UIButton</string>
+-						<string key="locationUpdateButton">UIButton</string>
+-						<string key="locationsc">UIScrollView</string>
+-						<string key="nextButton">UIBarButtonItem</string>
+-						<string key="pageControl">UIPageControl</string>
+-						<string key="pageNumberLabel">UILabel</string>
+-						<string key="pageScrollView">UIScrollView</string>
+-						<string key="pageTitleLabel">UILabel</string>
+-						<string key="photoLocationView">UIView</string>
+-						<string key="photoMapButton">UIButton</string>
+-						<string key="photoPickerView">UIView</string>
+-						<string key="photoResultURLLabel">CopyLabel</string>
+-						<string key="photoResultView">UIView</string>
+-						<string key="photoSizeLabel">UILabel</string>
+-						<string key="photoUploadView">UIView</string>
+-						<string key="photodateLabel">UILabel</string>
+-						<string key="photodescriptionField">UITextView</string>
+-						<string key="photodescriptionView">UIView</string>
+-						<string key="photolocationLabel">UILabel</string>
+-						<string key="pickerView">UIPickerView</string>
+-						<string key="prevButton">UIBarButtonItem</string>
+-						<string key="textViewAccessoryView">UIView</string>
+-						<string key="uploadButton">UIButton</string>
+-						<string key="uploadLabel">ExpandedUILabel</string>
+-						<string key="uploadProgressView">UIProgressView</string>
+-					</dictionary>
+-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+-						<object class="IBToOneOutletInfo" key="cameraButton">
+-							<string key="name">cameraButton</string>
+-							<string key="candidateClassName">UIButton</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="cancelButton">
+-							<string key="name">cancelButton</string>
+-							<string key="candidateClassName">UIButton</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="categoryButton">
+-							<string key="name">categoryButton</string>
+-							<string key="candidateClassName">UIButton</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="categoryDescLabel">
+-							<string key="name">categoryDescLabel</string>
+-							<string key="candidateClassName">UILabel</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="categoryFeaturebutton">
+-							<string key="name">categoryFeaturebutton</string>
+-							<string key="candidateClassName">UIButton</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="categoryTypeLabel">
+-							<string key="name">categoryTypeLabel</string>
+-							<string key="candidateClassName">UILabel</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="categoryView">
+-							<string key="name">categoryView</string>
+-							<string key="candidateClassName">UIView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="continueButton">
+-							<string key="name">continueButton</string>
+-							<string key="candidateClassName">UIButton</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="descImagePreview">
+-							<string key="name">descImagePreview</string>
+-							<string key="candidateClassName">UIImageView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="footerView">
+-							<string key="name">footerView</string>
+-							<string key="candidateClassName">UIView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="headerView">
+-							<string key="name">headerView</string>
+-							<string key="candidateClassName">UIView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="imagePreview">
+-							<string key="name">imagePreview</string>
+-							<string key="candidateClassName">UIImageView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="infoView">
+-							<string key="name">infoView</string>
+-							<string key="candidateClassName">UIView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="libraryButton">
+-							<string key="name">libraryButton</string>
+-							<string key="candidateClassName">UIButton</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="locationLabel">
+-							<string key="name">locationLabel</string>
+-							<string key="candidateClassName">UILabel</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="locationMapView">
+-							<string key="name">locationMapView</string>
+-							<string key="candidateClassName">RMMapView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="locationResetButton">
+-							<string key="name">locationResetButton</string>
+-							<string key="candidateClassName">UIButton</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="locationUpdateButton">
+-							<string key="name">locationUpdateButton</string>
+-							<string key="candidateClassName">UIButton</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="locationsc">
+-							<string key="name">locationsc</string>
+-							<string key="candidateClassName">UIScrollView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="nextButton">
+-							<string key="name">nextButton</string>
+-							<string key="candidateClassName">UIBarButtonItem</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="pageControl">
+-							<string key="name">pageControl</string>
+-							<string key="candidateClassName">UIPageControl</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="pageNumberLabel">
+-							<string key="name">pageNumberLabel</string>
+-							<string key="candidateClassName">UILabel</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="pageScrollView">
+-							<string key="name">pageScrollView</string>
+-							<string key="candidateClassName">UIScrollView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="pageTitleLabel">
+-							<string key="name">pageTitleLabel</string>
+-							<string key="candidateClassName">UILabel</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="photoLocationView">
+-							<string key="name">photoLocationView</string>
+-							<string key="candidateClassName">UIView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="photoMapButton">
+-							<string key="name">photoMapButton</string>
+-							<string key="candidateClassName">UIButton</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="photoPickerView">
+-							<string key="name">photoPickerView</string>
+-							<string key="candidateClassName">UIView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="photoResultURLLabel">
+-							<string key="name">photoResultURLLabel</string>
+-							<string key="candidateClassName">CopyLabel</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="photoResultView">
+-							<string key="name">photoResultView</string>
+-							<string key="candidateClassName">UIView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="photoSizeLabel">
+-							<string key="name">photoSizeLabel</string>
+-							<string key="candidateClassName">UILabel</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="photoUploadView">
+-							<string key="name">photoUploadView</string>
+-							<string key="candidateClassName">UIView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="photodateLabel">
+-							<string key="name">photodateLabel</string>
+-							<string key="candidateClassName">UILabel</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="photodescriptionField">
+-							<string key="name">photodescriptionField</string>
+-							<string key="candidateClassName">UITextView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="photodescriptionView">
+-							<string key="name">photodescriptionView</string>
+-							<string key="candidateClassName">UIView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="photolocationLabel">
+-							<string key="name">photolocationLabel</string>
+-							<string key="candidateClassName">UILabel</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="pickerView">
+-							<string key="name">pickerView</string>
+-							<string key="candidateClassName">UIPickerView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="prevButton">
+-							<string key="name">prevButton</string>
+-							<string key="candidateClassName">UIBarButtonItem</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="textViewAccessoryView">
+-							<string key="name">textViewAccessoryView</string>
+-							<string key="candidateClassName">UIView</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="uploadButton">
+-							<string key="name">uploadButton</string>
+-							<string key="candidateClassName">UIButton</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="uploadLabel">
+-							<string key="name">uploadLabel</string>
+-							<string key="candidateClassName">ExpandedUILabel</string>
+-						</object>
+-						<object class="IBToOneOutletInfo" key="uploadProgressView">
+-							<string key="name">uploadProgressView</string>
+-							<string key="candidateClassName">UIProgressView</string>
+-						</object>
+-					</dictionary>
+-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+-						<string key="majorKey">IBProjectSource</string>
+-						<string key="minorKey">./Classes/PhotoWizardViewController.h</string>
+-					</object>
+-				</object>
+-				<object class="IBPartialClassDescription">
+-					<string key="className">RMMapView</string>
+-					<string key="superclassName">UIView</string>
+-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+-						<string key="majorKey">IBProjectSource</string>
+-						<string key="minorKey">./Classes/RMMapView.h</string>
+-					</object>
+-				</object>
+-				<object class="IBPartialClassDescription">
+-					<string key="className">SuperViewController</string>
+-					<string key="superclassName">UIViewController</string>
+-					<object class="NSMutableDictionary" key="actions">
+-						<string key="NS.key.0">loginButtonSelected:</string>
+-						<string key="NS.object.0">id</string>
+-					</object>
+-					<object class="NSMutableDictionary" key="actionInfosByName">
+-						<string key="NS.key.0">loginButtonSelected:</string>
+-						<object class="IBActionInfo" key="NS.object.0">
+-							<string key="name">loginButtonSelected:</string>
+-							<string key="candidateClassName">id</string>
+-						</object>
+-					</object>
+-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+-						<string key="majorKey">IBProjectSource</string>
+-						<string key="minorKey">./Classes/SuperViewController.h</string>
+-					</object>
+-				</object>
+-			</array>
++			<int key="maxID">212</int>
+ 		</object>
++		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+ 		<int key="IBDocument.localizationMode">0</int>
+ 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
+ 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
+ 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
+-			<real value="1296" key="NS.object.0"/>
++			<real value="1536" key="NS.object.0"/>
+ 		</object>
+ 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
+ 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+-		<string key="IBCocoaTouchPluginVersion">1498</string>
++		<string key="IBCocoaTouchPluginVersion">1929</string>
+ 	</data>
+ </archive>
+View 1  src/cells/PhotoWizardCategoryCellView.m
+ @@ -18,7 +18,6 @@ @implementation PhotoWizardCategoryCellView
+ -(void)initialise{
+ 	
+ 	self.backgroundView.backgroundColor=UIColorFromRGB(0xDADADA);
+-	
+ }
+ 
+ 
+View 16  src/cells/RouteToolCellView.h
+@@ -1,16 +0,0 @@
+-//
+-//  RouteToolCellView.h
+-//  CycleStreets
+-//
+-//  Created by Neil Edwards on 27/02/2012.
+-//  Copyright (c) 2012 CycleStreets Ltd. All rights reserved.
+-//
+-
+-#import <UIKit/UIKit.h>
+-#import "BUTableCellView.h"
+-
+-@interface RouteToolCellView : BUTableCellView{
+-	
+-}
+-
+-@end
+View 30  src/cells/RouteToolCellView.m
+@@ -1,30 +0,0 @@
+-//
+-//  RouteToolCellView.m
+-//  CycleStreets
+-//
+-//  Created by Neil Edwards on 27/02/2012.
+-//  Copyright (c) 2012 CycleStreets Ltd. All rights reserved.
+-//
+-
+-#import "RouteToolCellView.h"
+-#import "ViewUtilities.h"
+-
+-@implementation RouteToolCellView
+-
+-
+-
+--(void)initialise{
+-	
+-	self.contentView.backgroundColor=UIColorFromRGB(0x444444);
+-	
+-	[ViewUtilities drawUIViewInsetShadow:self.contentView];
+-	
+-	
+-}
+-
+-
+-- (BOOL) canBecomeFirstResponder {
+-    return YES;
+-}
+-
+-@end
+View 10  src/controllers/Itinerary/ItineraryViewController.m
+ @@ -232,13 +232,11 @@ - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexP
+ 
+ - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+-	if(routeSegmentViewcontroller==nil){
+-		self.routeSegmentViewcontroller=[[RouteSegmentViewController alloc] init];
+-	}
++	RouteSegmentViewController *RSvc=[[RouteSegmentViewController alloc] init];
+ 	
+-	[routeSegmentViewcontroller setRoute:route];
+-	[self presentModalViewController:routeSegmentViewcontroller animated:YES];
+-	[routeSegmentViewcontroller setSegmentIndex:indexPath.row];
++	[RSvc setRoute:route];
++	[self presentModalViewController:RSvc animated:YES];
++	[RSvc setSegmentIndex:indexPath.row];
+ }
+ 
+ - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+View 2  src/controllers/PhotoWizard/PhotoWizardViewController.h
+ @@ -48,6 +48,7 @@ UIImagePickerControllerDelegate,UIScrollViewDelegate,UINavigationControllerDeleg
+ 	
+ 	BOOL							isModal;
+ 	
++	IBOutlet    UIBarButtonItem					*cancelViewButton;
+ 	IBOutlet    UIButton					*nextButton;
+ 	IBOutlet    UIButton					*prevButton;
+     
+ @@ -143,6 +144,7 @@ UIImagePickerControllerDelegate,UIScrollViewDelegate,UINavigationControllerDeleg
+ @property (nonatomic, assign) int maxVisitedPage;
+ @property (nonatomic, strong) NSMutableArray *viewArray;
+ @property (nonatomic, assign, getter=isModal) BOOL isModal;
++@property (nonatomic, strong) IBOutlet UIBarButtonItem *cancelViewButton;
+ @property (nonatomic, strong) IBOutlet UIButton *nextButton;
+ @property (nonatomic, strong) IBOutlet UIButton *prevButton;
+ @property (nonatomic, strong) IBOutlet UILabel *pageTitleLabel;
+View 3  src/controllers/PhotoWizard/PhotoWizardViewController.m
+ @@ -146,6 +146,7 @@ @implementation PhotoWizardViewController
+ @synthesize photoResultURLLabel;
+ @synthesize photoMapButton;
+ @synthesize categoryMenu;
++@synthesize cancelViewButton;
+ 
+ 
+ 
+ @@ -1348,6 +1349,8 @@ -(void)initCompleteView:(PhotoWizardViewState)state{
+ 	
+ 	BetterLog(@"");
+ 	
++	self.cancelButton.titleLabel.text=@"Done";
++	
+ 	
+ 	[ButtonUtilities styleIBButton:photoMapButton type:@"orange" text:@"View map"];
+ 	[photoMapButton addTarget:self action:@selector(photoMapButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
+View 2  src/controllers/Routes/RouteListViewController.h
+ @@ -32,7 +32,6 @@
+ 	// testing
+ 	UIView									*toolView;
+ 	NSIndexPath								*tappedIndexPath;
+-	NSIndexPath								*toolRowIndexPath;
+ 	NSIndexPath								*indexPathToDelete;
+ 	
+ 	
+ @@ -52,7 +51,6 @@
+ @property (nonatomic, strong) UITableView		* tableView;
+ @property (nonatomic, strong) UIView		* toolView;
+ @property (nonatomic, strong) NSIndexPath		* tappedIndexPath;
+-@property (nonatomic, strong) NSIndexPath		* toolRowIndexPath;
+ @property (nonatomic, strong) NSIndexPath		* indexPathToDelete;
+ 
+ -(void)setTableEditingState:(BOOL)state;
+View 59  src/controllers/Routes/RouteListViewController.m
+ @@ -11,7 +11,6 @@
+ #import "SavedRoutesManager.h"
+ #import "StyleManager.h"
+ #import "NSDate+Helper.h"
+-#import "RouteToolCellView.h"
+ #import "RouteManager.h"
+ 
+ 
+ @@ -54,7 +53,6 @@ @implementation RouteListViewController
+ @synthesize tableView;
+ @synthesize toolView;
+ @synthesize tappedIndexPath;
+-@synthesize toolRowIndexPath;
+ @synthesize indexPathToDelete;
+ 
+ 
+ @@ -127,11 +125,14 @@ -(void)refreshUIFromDataProvider{
+             self.tableDataProvider=[GlobalUtilities newKeyedDictionaryFromArray:dataProvider usingKey:@"dateOnlyString" sortedBy:@"dateString"];
+             self.keys=[GlobalUtilities newTableIndexArrayFromDictionary:tableDataProvider withSearch:NO ascending:NO];
+         }
+-        [self createRowHeightsArray];
+-		[self createSectionHeadersArray];
+-        [self.tableView reloadData];
+ 		
+-		[self showViewOverlayForType:kViewOverlayTypeNoResults show:NO withMessage:nil];
++		if([keys count]>0){
++			[self createRowHeightsArray];
++			[self createSectionHeadersArray];
++			[self.tableView reloadData];
++		
++			[self showViewOverlayForType:kViewOverlayTypeNoResults show:NO withMessage:nil];
++		}
+         
+     }else{
+ 		if(isSectioned==YES){
+ @@ -217,11 +218,6 @@ - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger
+ 	if(isSectioned==YES){
+ 		NSString *key=[keys objectAtIndex:section];
+ 		NSMutableArray *sectionDataProvider=[tableDataProvider objectForKey:key];
+-		if(toolRowIndexPath){
+-			if(section==[tappedIndexPath section]){
+-				return [sectionDataProvider count]+1;
+-			}
+-		}
+ 		return [sectionDataProvider count];
+ 	}else {
+ 		return [dataProvider count];
+ @@ -257,19 +253,11 @@ - (UITableViewCell *)tableView:(UITableView *)table cellForRowAtIndexPath:(NSInd
+ 		NSString *key=[keys objectAtIndex:[indexPath section]];
+ 		NSMutableArray *sectionDataProvider=[tableDataProvider objectForKey:key];
+ 		
+-		if([indexPath isEqual:toolRowIndexPath]){
+-			
+-			RouteToolCellView *cell = (RouteToolCellView *)[RouteToolCellView cellForTableView:table fromNib:[RouteToolCellView nib]];
+-			return cell;
+-			
+-		}else {
+-			
+-			RouteVO *route=[sectionDataProvider objectAtIndex:[indexPath row]];
+-			cell.dataProvider=route;
+-			cell.isSelectedRoute=[[RouteManager sharedInstance] routeIsSelectedRoute:route];
++		RouteVO *route=[sectionDataProvider objectAtIndex:[indexPath row]];
++		cell.dataProvider=route;
++		cell.isSelectedRoute=[[RouteManager sharedInstance] routeIsSelectedRoute:route];
+ 			
+-			[cell populate];
+-		}
++		[cell populate];
+ 		
+ 		
+ 	}else {
+ @@ -408,30 +396,17 @@ - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPa
+ 		NSString *key=[keys objectAtIndex:[indexPath section]];
+ 		NSMutableArray *arr=[rowHeightDictionary objectForKey:key];
+ 		
+-		if([indexPath isEqual:toolRowIndexPath]){
+-			return [RouteToolCellView rowHeight];
+-		}else {
+-			
+-			int rowIndex=[indexPath row];
+-            if(rowIndex<[arr count]){
+-                CGFloat cellheight=[[arr objectAtIndex:rowIndex] floatValue];
+-                return cellheight;
+-            }else{
+-                return 0;
+-            }
+-			
++		int rowIndex=[indexPath row];
++		if(rowIndex<[arr count]){
++			CGFloat cellheight=[[arr objectAtIndex:rowIndex] floatValue];
++			return cellheight;
++		}else{
++			return 0;
+ 		}
+ 		
+ 	}
+ }
+ 
+-- (NSIndexPath *)modelIndexPathforIndexPath:(NSIndexPath *)indexPath
+-{
+-    int whereIsTheControlRow = toolRowIndexPath.row;
+-    if(toolRowIndexPath != nil && indexPath.row > whereIsTheControlRow)
+-        return [NSIndexPath indexPathForRow:indexPath.row - 1 inSection:indexPath.section]; 
+-    return indexPath;
+-}
+ 
+ 
+ //
+View 2  src/controllers/Routes/RoutesViewController.m
+ @@ -297,7 +297,7 @@ -(void)doNavigationPush:(NSString*)className withDataProvider:(id)data andIndex:
+         }
+         self.routeSummary.route = (RouteVO*)data;
+ 		routeSummary.dataType=index;
+-        [self.navigationController pushViewController:self.routeSummary animated:YES];
++        [self showUniqueViewController:routeSummary];
+         
+     }
+     
+View 1  src/controllers/SuperViewController.h
+ @@ -82,6 +82,7 @@ typedef int ViewOverlayType;
+ -(void)initialise;
+ -(void)refreshUIFromDataProvider;
+ -(void)deSelectRowForTableView:(UITableView*)table;
++-(void)showUniqueViewController:(SuperViewController*)vc;
+ 
+ -(void)showViewOverlayForType:(ViewOverlayType)type show:(BOOL)show withMessage:(NSString*)message;
+ -(void)showViewOverlayForType:(ViewOverlayType)type show:(BOOL)show withMessage:(NSString*)message withIcon:(NSString*)icon;
+View 12  src/controllers/SuperViewController.m
+ @@ -36,7 +36,7 @@ @implementation SuperViewController
+ //=========================================================== 
+ - (void)dealloc
+ {
+-	//[[NSNotificationCenter defaultCenter] removeObserver:self];
++	[[NSNotificationCenter defaultCenter] removeObserver:self];
+ 	delegate = nil;	
+ }
+ 
+ @@ -494,6 +494,16 @@ -(void)showViewOverlayForType:(ViewOverlayType)type show:(BOOL)show withMessage:
+ }
+ 
+ 
++-(void)showUniqueViewController:(SuperViewController*)vc{
++    
++    if([self.navigationController.viewControllers containsObject:vc]==YES){
++        [self.navigationController popToViewController:vc animated:NO];
++    }else{
++        [self.navigationController pushViewController:vc animated:YES];
++    }
++}
++
++
+ //
+ /***********************************************
+  * @description			ViewOverlay callbacks
